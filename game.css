@@ -1,0 +1,772 @@
+
+/* Google font */
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
+@import url('https://fonts.googleapis.com/css?family=Niconne');
+@import url('https://fonts.googleapis.com/css?family=Catamaran');
+@import url('https://fonts.googleapis.com/css?family=Jockey+One');
+@import url('https://fonts.googleapis.com/css?family=Fontdiner+Swanky');
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
+
+
+/* General */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(img/fon.png);
+    font-family: 'Catamaran', sans-serif;
+}
+
+.title {
+    margin: 2rem auto;
+    text-align: center;
+    font-family: 'Fredericka the Great', cursive;
+    color: antiquewhite;
+}
+
+.title h1 {
+    font-size: 5em;
+}
+
+.container {
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-auto-rows: 300px;
+    grid-gap: 60px;
+    align-content: center;
+    justify-content: center;
+}
+
+
+
+.box {
+    background: whitesmoke;
+    position: relative;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    transition: opacity 2s 2s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(62, 255, 104, 0.753);
+    padding: 10px;
+    border: 5px double #ffffff;
+    z-index: 9;
+    overflow: hidden;
+    animation:  animateOverlay 2s;
+}
+
+.overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@keyframes animateImg {
+    0% {transform: rotate(0deg);}
+    20% {transform:rotate(15deg);}
+    40% {transform:rotate(0deg);}
+    60% {transform:rotate(-15deg);}
+    80% {transform:rotate(0deg)scale(1.1,1.1);}
+    100% {transform:rotate(0deg) scale(1,1); }
+}
+
+@keyframes animateOverlay {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Box1 USA Independence */
+.box1 {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-gap: 20px;
+    align-content: center;
+    justify-items: center;
+    font-size: 1.6rem;
+    background-image: url(img/box1/paper.png);
+    transition: opacity 2s;
+}
+
+.box1 h3 {
+    font-family: 'Niconne', cursive;
+}
+
+/* Box2 European counties */
+.box2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 20px 10px;
+    align-content: start;
+    justify-items: center;
+    background: linear-gradient(to right, #757f9a, #d7dde8);
+    color: rgb(0, 0, 0);
+    font-family: 'Jockey One', sans-serif;
+}
+
+.box2 h3 {
+   grid-column: 1/-1;
+}
+
+.box2 label {
+    width: 95px;
+    cursor: pointer;
+ }
+
+ .box2 input {
+    cursor: pointer;
+ }
+
+ .box2 label img {
+    width: 20px;
+    height: 20px;
+    margin: 3px;
+ }
+
+.box2 #europe {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 10px;
+ }
+
+/* Box3 Range inputs */
+.box3 {
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    grid-auto-rows: 50px;
+    grid-gap: 5px;
+    padding: 15px;
+    color: white;
+    font-weight: 900;
+    align-content: center;
+    justify-items: center;
+    background: linear-gradient(to left, #e53935, #e35d5b);
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+.hint {
+    position: absolute;
+    opacity: 0;
+    transition: all 1s;
+    grid-column: 1/-1;
+}
+
+.hint:hover{
+    opacity: 1;
+}
+
+.hint1{top: 10px; left: 200px;}
+
+.hint2{bottom: 30px; right: 0px;}
+
+.hint3{bottom: 10px;left: 10px;}
+
+
+/* Box4 Rainbow */
+.box4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 50px;
+    grid-gap: 10px;
+    padding: 15px;
+    align-content: center;
+    justify-items: center;
+    background: rgb(51, 48, 48);
+}
+
+.box4 h3 {
+    font-family: 'Fontdiner Swanky', cursive;
+    font-size: 2.5rem;
+}
+
+.box4 button {
+    width: 80px;
+    height: 35px;
+    color: #ffff;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+    font-style: italic;
+    transition: all .07s ease;
+}
+
+.box4  button:nth-child(2) {
+    outline: none;
+    background: rgb(253, 48, 48);
+}
+
+.box4  button:nth-child(2):hover {background: rgb(199, 4, 4);}
+
+.box4  button:nth-child(3) {
+    outline: none;
+    background: rgb(248, 238, 93);
+}
+
+.box4  button:nth-child(3):hover {background: rgb(202, 224, 0);}
+
+.box4  button:nth-child(4) {
+    outline: none;
+    background: rgb(59, 248, 75);
+}
+
+.box4  button:nth-child(4):hover {background: rgb(0, 129, 11);}
+
+.box4  button:nth-child(5) {
+    outline: none;
+    background: rgb(37, 69, 252);
+}
+
+.box4  button:nth-child(5):hover {background: rgb(2, 22, 131);}
+
+.box4  button:nth-child(6) {
+    outline: none;
+    background: rgb(171, 53, 250);
+}
+
+.box4  button:nth-child(6):hover {background: rgb(51, 1, 85);}
+
+.box4  button:nth-child(7) {
+    outline: none;
+    background: rgb(255, 158, 47);
+}
+
+.box4  button:nth-child(7):hover {background: rgb(204, 75, 0);}
+
+.box4  button:nth-child(8) {
+    outline: none;
+    background: rgb(80, 196, 235);
+}
+
+.box4  button:nth-child(8):hover {background:rgb(0, 130, 173);}
+
+.box4  button:nth-child(9) {
+    outline: none;
+    background: rgb(252, 147, 165);
+}
+
+.box4  button:nth-child(9):hover {background:rgb(245, 40, 74);}
+
+.box4  button:nth-child(10) {
+    outline: none;
+    background: rgb(94, 43, 20);
+}
+
+.box4  button:nth-child(10):hover {background:rgb(61, 22, 4);}
+
+.press {
+    transform: scale(1.2);
+}
+
+.box4 > h3 {
+    grid-column: 1/-1;
+ }
+
+/* Box5 Clock */
+.box5 {
+    background-image: url(img/box5/time.png);
+    background-size: cover;
+}
+
+.clock {
+    width: 200px;
+    height: 200px;
+    border: 5px solid white;
+    border-radius:50%;
+    background: white;
+    margin: 20px auto;
+    position: relative;
+    padding: 5px;
+    box-shadow:
+      0 0 0 4px rgba(0,0,0,0.2),
+      inset 0 0 0 5px rgb(73, 71, 71),
+      inset 0 0 10px black,
+      0 0 10px rgba(0,0,0,0.2);
+}
+
+.clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.hand {
+    width: 50%;
+    height: 5px;
+    background:rgb(43, 43, 43);
+    position: absolute;
+    top: 48%;
+    border-radius: 5px;
+    transform-origin: 100%;   
+}
+
+.hour-hand {
+    height: 5.5px;
+    background:rgb(43, 43, 43);
+}
+
+.number {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.number1 {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.number2 {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.number3 {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.number4 {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.box5 .sun {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: block;
+    cursor: pointer;
+}
+
+.sun:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.box5 .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 45px;
+    right: 10px;
+    opacity: 0;
+    transition: all 0.3s;
+    font-size: 12px;
+}
+
+.box5 .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 80%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Box6 Move BOX */
+.box6 {
+    background-image: url(img/box6/grass.png);
+    background-size: cover;
+    z-index: -1;
+}
+
+.box6 .info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: center;
+    justify-items: center;
+    margin: 80px 80px;
+}
+
+.box6 .info span:nth-child(1) {
+    grid-column: 1/-1;
+}
+.box6 .info span:nth-child(2) {
+    grid-column: 1/-1;
+}
+.box6 .info span:nth-child(5) {
+    grid-column: 1/-1;
+}
+.box6 .info span:nth-child(6) {
+    grid-column: 1/-1;
+}
+
+.box6 .info i {
+    color: white;
+}
+
+.box6 #boxToMove {
+    width: 60px;
+    height: 60px;
+    background-image: url(img/box6/animal.png);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid black;
+    z-index: 1;
+}
+
+.box6 .position {
+    width: 60px;
+    height: 60px;
+    background: white;
+    z-index: 0;
+    position: absolute;
+    border: 2px dashed rgb(1, 48, 10);
+    font-size: 9px;
+    font-weight: bold;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+}
+
+.box6 .position1 {
+    bottom: 10px;
+    left: 120px;
+}
+
+.box6 .position2 {
+    top: 10px;
+    left: 130px;
+}
+
+
+.box6 .position3 {
+    top: 30px;
+    right: 10px;
+}
+
+
+.box6 .position4 {
+    bottom: 20px;
+    right: 10px;
+}
+
+.box6 .position5 {
+    top: 100px;
+    left: 10px;
+}
+
+.box6 .position6 {
+    bottom: 40px;
+    left: 30px;
+}
+
+.box6 .position7 {
+    bottom: 110px;
+    right: 20px;
+}
+
+
+/* Box7 collect summ */
+.box7 {
+    display: grid;
+    grid-gap: 10px;
+    align-content: center;
+    justify-items: center;
+    background-image: url(img/box7/notebook.png);
+    background-size: cover;
+}
+
+.box7 .numberCode {
+    font-family: 'Niconne', cursive;
+    position: absolute;
+    top: 65px;
+    left: 15px;
+    transform: rotate(45deg);
+}
+
+.box7 span {
+   font-weight: bold;
+}
+
+.box7 .block {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    color: white;
+    font-weight: 900;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    transition: all 0.07s;
+    cursor: cell;
+}
+
+.box7 .block:hover {
+    transform: scale(1.1);
+}
+
+.box7 .block1 {
+    top: 40px;
+    left: 120px;
+    background: red;
+}
+
+.box7 .block2 {
+    top: 5px;
+    left: 10px;
+    background: rgb(89, 0, 255);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.box7 .block3 {
+    top: 210px;
+    left: 20px;
+    background: rgb(195, 0, 255);
+    clip-path: polygon(0% 15%, 36% 35%, 15% 0%, 85% 0%, 63% 38%, 100% 15%, 100% 85%, 63% 63%, 85% 100%, 15% 100%, 35% 60%, 0% 85%);
+}
+
+.box7 .block4 {
+    top: 240px;
+    left: 120px;
+    background: rgb(2, 2, 2);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.box7 .block5 {
+    top: 10px;
+    left: 230px;
+    background: rgb(0, 255, 157);
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0 0);
+}
+
+.box7 .block6 {
+    top: 120px;
+    left: 210px;
+    background: rgb(255, 136, 0);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.box7 .block7 {
+    top: 235px;
+    left: 220px;
+    background: rgb(43, 255, 0);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.box7 .block8 {
+    top: 105px;
+    left: 30px;
+    background: rgb(179, 176, 0);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+/* Box8 Rolle Dices */
+.box8 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    align-content: center;
+    justify-items: center;
+    background-image: url(img/box8/lasvegas.png);
+    background-size: cover;
+    color: white;
+    font-family: 'Audiowide', cursive;
+}
+
+.box8 h3, .box8 .status, .box8 button {
+    grid-column: 1/-1;
+}
+
+.box8 .status {
+    background: white;
+    height: 30px;
+    width: 140px;
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.box8 .dice {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    font-size: 66px;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+}
+
+.box8 .dice fas {
+    font-size: 26px;
+    font-weight: 900;
+}
+
+/* Box9 Secret code */
+.box9 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    align-content: center;
+    justify-items: center;
+    background-image: url(img/box9/code.png);
+    background-size: cover;
+}
+
+.box9 .codeBlock span {
+    transition: all 0.07s;
+}
+
+/* Win End of game */
+
+.winOverlay {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.596);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s;  
+}
+
+.winBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    align-content: center;
+    justify-items: center;
+    background-image: url(img/win.png);
+    background-size: cover;
+    text-align: center;
+    padding: 15px;
+    border: 5px outset rgb(0, 0, 0);
+}
+
+.winBox p {
+    text-align: center;
+    font-size: 3.7rem;
+    font-weight: 900;
+    font-family: 'Berkshire Swash', cursive;
+    transform: rotate(-20deg);
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.winBox img{
+    width: 200px;
+    height: 200px;
+}
+
+
+@media screen and (max-width: 992px) {
+    .container {
+        grid-template-columns: repeat(2, 300px);
+    }
+    .winBox {
+        width: 500px;
+        height: 400px;
+    }
+
+    .winBox p{
+        font-size: 3rem;
+    }
+
+    .winBox img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .container {
+        grid-template-columns: 300px;
+    }
+
+    .winBox {
+        width: 380px;
+        height: 280px;
+    }
+
+    .winBox p{
+        font-size: 1.6rem;
+    }
+
+    .winBox img {
+        width: 100px;
+        height: 100px;
+    }
+}

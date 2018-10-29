@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid-game with JS</title>
+    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <script src="game.js"></script>
+</head>
+<body>
+
+    <div class="d-none" >
+        <div class="overlay">
+            <img src="img/complete.png" alt="">
+        </div>
+    </div>
+   
+    <div class="title">
+        <h1>Grid-game with JS</h1>
+        <button class="btn btn-md btn-danger">Start</button>
+    </div>
+
+    <div class="winOverlay">
+        <div class="winBox">
+            <p>Congratulations!!!</p>
+            <img src="img/award.png" alt="">
+            <button class="btn btn-md btn-primary ml-2">Yea!</button>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <!-- Box1 USA Independence -->
+        <div class="box box1 p-3">
+            <h3 class="text-center" for="text">When the United States of America proclaimed its independence from England?</h3>
+            <form class="form-inline"> 
+                <input class="form-control" style="width: auto;" type="date">
+                <button type="submit" class="btn btn-md btn-primary ml-2">Try</button>
+            </form>
+        </div>
+
+        <!-- Box2 European counties -->
+        <div class="box box2">
+            <h3 class="text-center">Select European countries</h3>
+            <label><input id="can" data-country="0" type="checkbox"> Canada <img src="img/box2/canada.png" alt=""></label>
+            <label><input id="fr" data-country="1" type="checkbox"> France <img src="img/box2/france.png" alt=""></label>
+            <label><input id="guy" data-country="0" type="checkbox"> Guyana <img src="img/box2/guyana.png" alt=""></label>
+            <label><input id="ir" data-country="0" type="checkbox"> Irak <img src="img/box2/iraq.png" alt=""></label>
+            <label><input id="isp" data-country="1" type="checkbox"> Ispain <img src="img/box2/ispain.png" alt=""></label>
+            <label><input id="au" data-country="1" type="checkbox"> Austria <img src="img/box2/austria.png" alt=""></label>
+            <img id="europe" src="img/box2/europe.png" alt="">
+        </div>
+
+        <!-- Box3 Range inputs -->
+        <div class="box box3">
+            <input type="range" min="1" max="100" value="50" class="slider">
+            <span>50</span>
+
+            <input type="range" min="1" max="100" value="50" class="slider">
+            <span>50</span>
+
+            <input type="range" min="1" max="100" value="50" class="slider">
+            <span>50</span>
+
+            <div class="hint hint1">1 - 45;</div>
+            <div class="hint hint2">2 - 12;</div>
+            <div class="hint hint3">3 - 97;</div>
+        </div>
+
+        <!-- Box4 Rainbow -->
+        <div class="box box4">
+            <h3 class="text-secondary">Rainbow</h3>
+            <button data-color="red" class="">Red</button>
+            <button data-color="yellow" class="">Yellow</button> 
+            <button data-color="green" class="">Green</button> 
+            <button data-color="blue" class="">Blue</button>
+            <button data-color="purple" class="">Purple</button>
+            <button data-color="orange" class="">Orange</button>
+            <button data-color="lightblue" class="">Lightblue</button>
+            <button data-color="pink" class="">Pink</button>
+            <button data-color="brown" class="">Brown</button>
+        </div>
+
+        <!-- Box5 Clock -->
+        <div class="box box5">
+            <div class="box5Btns text-center mt-3">
+                <span id="hourBtn" class="font-weight-bold btn btn-md btn-warning">Hour</span>
+                <span id="tryBtn" class="font-weight-bold btn btn-md btn-primary mx-4">Try</span>
+                <span id="minBtn" class="font-weight-bold btn btn-md btn-warning">Minute</span>
+            </div>
+            <div class="clock">
+                <div class="clock-face">
+                    <div class="hand hour-hand" style="transform: rotate(90deg);"></div>
+                    <div class="hand min-hand" style="transform: rotate(90deg);"></div>
+                    <div class="number number1">12</div>
+                    <div class="number number2">3</div>
+                    <div class="number number3">6</div>
+                    <div class="number number4">9</div>
+                </div>
+            </div>
+            <span class="tooltiptext">(50 * 9 - 120 ) / 100</span>
+            <img class="sun" src="img/box5/sun.png" alt="sun">
+        </div>
+
+        <!-- Box6 Move BOX -->
+        <div class="box box6">
+            <div class="info">
+                <span><i class="fas fa-arrow-up"></i></span>
+                <span><kbd>W</kbd></span>
+                <span><i class="fas fa-arrow-left"></i> <kbd>A</kbd></span>
+                <span><kbd>D</kbd> <i class="fas fa-arrow-right"></i></span>
+                <span><kbd>S</kbd></span>
+                <span><i class="fas fa-arrow-down"></i></span>
+            </div>
+            <div id="boxToMove"></div>
+            <div class="position position1">Mammal</div>
+            <div class="position position2">Amphibian</div>
+            <div class="position position3">Reptile</div>
+            <div class="position position4">Fishes</div>
+            <div class="position position5">Birds</div>
+            <div class="position position6">Arthropoda</div>
+            <div class="position position7">Pokemon</div>
+        </div>
+
+
+        <!-- Box7 collect summ -->
+        <div class="box box7">
+            <span></span>
+            <div data-value="12" class="block block1">12</div>
+            <div data-value="32" class="block block2">32</div>
+            <div data-value="9" class="block block3">9</div>
+            <div data-value="28" class="block block4">28</div>
+            <div data-value="81" class="block block5">81</div>
+            <div data-value="54" class="block block6">54</div>
+            <div data-value="66" class="block block7">66</div>
+            <div data-value="43" class="block block8">43</div>
+            <button class="btn btn-sm font-weight-bold btn-secondary p-1">Reset</button>
+            <div class="numberCode">457</div>
+        </div>
+
+        <!-- Box8 Rolle Dices -->
+        <div class="box box8">
+            <h3>More than ten</h3>
+            <div class="dice1 dice"><i class="fas fa-dice-one"></i></div>
+            <div class="dice2 dice"><i class="fas fa-dice-one"></i></div>
+            <button class="btn btn-md font-weight-bold btn-success p-1">Roll dice</button>
+            <div class="status"></div>
+        </div>
+
+        <!-- Box9 Secret code -->
+        <div class="box box9">
+            <div class="codeBlock">
+                <span data-key="83" class="code badge badge-warning p-2">J+5l</span>
+                <span data-key="67" class="code badge badge-warning p-2">Z+2r</span>
+                <span data-key="82" class="code badge badge-warning p-2">U+3l</span>
+                <span data-key="73" class="code badge badge-warning p-2">Q+7r</span>
+                <span data-key="80" class="code badge badge-warning p-2">O+1r</span>
+                <span data-key="84" class="code badge badge-warning p-2">I+3l</span>
+            </div>
+            <form class="form-inline">
+                <input class="form-control" style="width: auto;" type="text">
+                <button class="btn btn-md ml-2 btn-primary" type="submit">Try</button>
+            </form>
+        </div>
+
+
+    </div>
+
+   
+</body>
+</html>
