@@ -163,22 +163,22 @@ let topMove = 0;
 document.addEventListener('keydown', moveBox);
 
 function moveBox(e){
-
-    if(leftMove < 240 && e.key == 'd' || e.key == 'D'){
+    
+    if(leftMove < 240 && e.keyCode == '68'){
         leftMove += 10;
         boxToMove.style.left = leftMove + 'px';
     }
 
-    if(leftMove > 0 && e.key == 'a' || e.key == 'A'){
+    if(leftMove > 0 && e.keyCode == '65'){
         leftMove -= 10;
         boxToMove.style.left = leftMove +'px';
     }
 
-    if(topMove < 240 && e.key == 's' || e.key == 'S'){
+    if(topMove < 240 && e.keyCode == '83'){
         topMove += 10;
         boxToMove.style.top = topMove +'px';
     }
-    if(topMove > 0 && e.key == 'w' || e.key == 'W'){
+    if(topMove > 0 && e.keyCode == '87'){
         topMove -= 10;
         boxToMove.style.top = topMove +'px'; 
     }
